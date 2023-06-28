@@ -3,29 +3,23 @@ import java.util.Scanner;
 
 public class Task06 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 10000000; i < 99999999; i++) {
-            int count = 0;
-            int tmp = i;
-            while (tmp > 0) {
-                tmp /= 10;
-                count++;
+        for (int i = 100; i < 1000; i++) {
+            int tmpNum = i;
+            int j = 0;
+            while (tmpNum > 0) {
+                int number = tmpNum % 10;
+                tmpNum /= 10;
+                int tmpNum2 = tmpNum;
+                while (tmpNum2 > 0) {
+                    if (number == tmpNum2 % 10) {
+                        j++;
+                    }
+                    tmpNum2 /= 10;
+                }
             }
-//            ArrayList<Integer> array = new ArrayList<Integer>();
-//            for (int j = 0; j < count; j++) {
-//                array.add(i % 10);
-//                i /= 10;
-//            }
-
-            int array[] = new int[count];
-            for (int j = 0; j < count; j++) {
-                array[j] = i % 10;
-                i /= 10;
-            }
-            for (int j = 0; j < count; j++) {
-                System.out.println(array[i]);
+            if (j == 0) {
+                System.out.println(i);
             }
         }
-        int in = scanner.nextInt();
     }
 }
