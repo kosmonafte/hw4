@@ -5,6 +5,8 @@ public class Task10 {
             for (int j = 1; j < 21; j++) {
                 if (i % j == 0) {
                     count++;
+                } else {
+                    break;
                 }
             }
             if (count == 20) {
